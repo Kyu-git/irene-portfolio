@@ -8,15 +8,15 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
-    line-height: 1.6;
+    color: #1f2937; /* High-contrast body text */
+    line-height: 1.7;
     min-height: 100vh;
 }
 
 /* Navigation */
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    backdrop-filter: none;
     position: fixed;
     top: 0;
     width: 100%;
@@ -37,12 +37,8 @@ body {
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
-    background: linear-gradient(45deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .nav-menu {
@@ -51,7 +47,7 @@ body {
 }
 
 .nav-link {
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -59,7 +55,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #667eea;
+    color: #e0e7ff;
 }
 
 .nav-link::after {
@@ -69,7 +65,7 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: #ffffff;
     transition: width 0.3s ease;
 }
 
@@ -141,6 +137,15 @@ main {
     background-size: cover;
 }
 
+/* Extra dark overlay to ensure text readability on busy photos */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
 .hero-content {
     position: relative;
     z-index: 2;
@@ -153,13 +158,34 @@ main {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
     font-size: 1.3rem;
     margin-bottom: 30px;
-    opacity: 0.9;
+    opacity: 0.98;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* Improve readability for any section with a gradient/photo background applied inline */
+.section[style*="linear-gradient"],
+.section[style*="url("] {
+    color: #f3f4f6; /* default text to near-white */
+}
+.section[style*="linear-gradient"] .section-title,
+.section[style*="url("] .section-title {
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+}
+.section[style*="linear-gradient"] .section-subtitle,
+.section[style*="url("] .section-subtitle {
+    color: #e5e7eb;
+}
+.section[style*="linear-gradient"] p,
+.section[style*="url("] p {
+    color: #e5e7eb;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.35);
 }
 
 .hero-subtitle {
@@ -224,17 +250,17 @@ main {
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 20px;
-    color: #333;
+    color: #111827; /* Very dark for strong hierarchy */
 }
 
 .section-subtitle {
     text-align: center;
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 1.15rem;
+    color: #4b5563; /* Better contrast */
     margin-bottom: 60px;
-    max-width: 600px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -277,8 +303,8 @@ main {
 }
 
 .card p {
-    color: #666;
-    line-height: 1.6;
+    color: #374151;
+    line-height: 1.7;
 }
 
 /* About Section */
@@ -309,9 +335,17 @@ main {
 
 .about-text p {
     margin-bottom: 20px;
-    color: #666;
-    line-height: 1.8;
+    color: #374151;
+    line-height: 1.85;
 }
+
+/* Contact info readability */
+.contact-info p,
+.contact-info div,
+.contact-info a { color: #1f2937; }
+
+/* Strengthen small text globally */
+small, .muted, .video-info p { color: #374151; opacity: 0.95; }
 
 .skills {
     margin-top: 40px;
@@ -346,26 +380,45 @@ main {
 .portfolio-filters {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 12px;
     margin-bottom: 40px;
     flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.65);
+    padding: 8px 12px;
+    border-radius: 9999px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    backdrop-filter: blur(6px);
 }
 
 .filter-btn {
-    padding: 10px 25px;
+    padding: 12px 28px;
     border: 2px solid #667eea;
-    background: transparent;
-    color: #667eea;
-    border-radius: 25px;
+    background: #ffffff;
+    color: #4f46e5;
+    border-radius: 9999px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
+    transition: all 0.25s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
-.filter-btn.active,
 .filter-btn:hover {
-    background: #667eea;
-    color: white;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.35);
+}
+
+.filter-btn.active {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(118, 75, 162, 0.35);
+}
+
+.filter-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.35);
 }
 
 .video-grid {
@@ -405,8 +458,8 @@ main {
 }
 
 .video-info p {
-    color: #666;
-    font-size: 0.9rem;
+    color: #374151;
+    font-size: 0.95rem;
 }
 
 /* Upload Section */
@@ -551,13 +604,13 @@ main {
 }
 
 .footer-section ul li a {
-    color: #ccc;
+    color: #ddd;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-    color: #667eea;
+    color: #ffffff;
 }
 
 .social-links {
@@ -587,7 +640,7 @@ main {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid #555;
-    color: #ccc;
+    color: #e5e7eb;
 }
 
 /* Responsive Design */
@@ -614,11 +667,11 @@ main {
     }
     
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
     
     .hero p {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
     
     .cta-buttons {

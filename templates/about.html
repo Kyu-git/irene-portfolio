@@ -4,7 +4,7 @@
 
 {% block content %}
 <!-- About Hero Section -->
-<section class="hero" style="padding: 80px 0;">
+<section class="hero" style="padding: 80px 0; background-image: linear-gradient(135deg, rgba(102,126,234,0.65), rgba(118,75,162,0.65)), url('https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1011&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
     <div class="hero-content">
         <h1>About Me</h1>
         <p>Passionate Developer, Security Expert & Creative Hairdresser</p>
@@ -16,17 +16,11 @@
     <div class="container">
         <div class="about-content">
             <div class="about-image">
-                <div style="width: 100%; height: 500px; background: linear-gradient(45deg, #667eea, #764ba2); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                    <div style="text-align: center;">
-                        <i class="fas fa-user" style="font-size: 4rem; margin-bottom: 20px; opacity: 0.7;"></i>
-                        <p>Professional Photo</p>
-                        <p style="font-size: 0.9rem; opacity: 0.8;">Coming Soon</p>
-                    </div>
-                </div>
+                <img src="{{ url_for('static', filename='images/Snapchat-198344285.jpg') }}" alt="Profile photo" style="width: 100%; height: 500px; object-fit: cover; border-radius: 15px;">
             </div>
             <div class="about-text">
                 <h3>My Story</h3>
-                <p>Hello! I'm Kha, a passionate individual who has found the perfect balance between technology and creativity. My journey began with a deep fascination for computers and security, which led me to pursue a Bachelor's degree in Computer Security and Forensics at Meru University of Science and Technology.</p>
+                <p>Hello! I'm Irene Kathini, a passionate individual who has found the perfect balance between technology and creativity. My journey began with a deep fascination for computers and security, which led me to pursue a Bachelor's degree in Computer Security and Forensics at Meru University of Science and Technology.</p>
                 
                 <p>During my academic journey, I discovered not only my love for cybersecurity and digital forensics but also my passion for full-stack development. I've spent countless hours mastering technologies like Python, JavaScript, React, and various web frameworks to create robust and secure applications.</p>
                 
@@ -138,14 +132,14 @@
 </section>
 
 <!-- Philosophy Section -->
-<section class="section" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));">
+<section class="section" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.55), rgba(118, 75, 162, 0.55)); color: #ffffff;">
     <div class="container">
         <h2 class="section-title">My Philosophy</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <p style="font-size: 1.2rem; line-height: 1.8; color: #666; margin-bottom: 30px;">
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #e5e7eb; margin-bottom: 30px; text-shadow: 0 2px 10px rgba(0,0,0,0.45);">
                 "I believe that the best solutions come from combining different perspectives. My unique background in both technology and hairdressing has taught me that creativity and logic can work hand in hand to create something truly exceptional."
             </p>
-            <p style="font-size: 1.1rem; color: #888;">
+            <p style="font-size: 1.1rem; color: #f3f4f6; text-shadow: 0 2px 8px rgba(0,0,0,0.4);">
                 Whether I'm writing code or creating a new hairstyle, I approach every project with the same principles: attention to detail, continuous learning, and a commitment to excellence.
             </p>
         </div>
@@ -153,10 +147,10 @@
 </section>
 
 <!-- Call to Action -->
-<section class="section">
+<section class="section" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.55), rgba(118, 75, 162, 0.55)); color: #ffffff;">
     <div class="container" style="text-align: center;">
-        <h2 class="section-title">Let's Work Together</h2>
-        <p class="section-subtitle">Ready to bring your ideas to life? I'd love to hear about your project!</p>
+        <h2 class="section-title" style="color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.45);">Let's Work Together</h2>
+        <p class="section-subtitle" style="color: #e5e7eb; text-shadow: 0 1px 8px rgba(0,0,0,0.35);">Ready to bring your ideas to life? I'd love to hear about your project!</p>
         <div class="cta-buttons">
             <a href="{{ url_for('contact') }}" class="btn btn-primary">Get In Touch</a>
             <a href="{{ url_for('portfolio') }}" class="btn btn-secondary">View My Work</a>

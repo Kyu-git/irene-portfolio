@@ -4,7 +4,7 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero" style="background-image: linear-gradient(135deg, rgba(102,126,234,0.65), rgba(118,75,162,0.65)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHRlY2h8ZW58MHx8MHx8fDA%3D'); background-size: cover; background-position: center;">
     <div class="hero-content">
         <h1>Hi, I'm Kha</h1>
         <p>Full Stack Developer & Professional Hairdresser</p>
@@ -55,9 +55,7 @@
     <div class="container">
         <div class="about-content">
             <div class="about-image">
-                <div style="width: 100%; height: 400px; background: linear-gradient(45deg, #667eea, #764ba2); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                    <i class="fas fa-user" style="font-size: 4rem; opacity: 0.7;"></i>
-                </div>
+                <img src="{{ url_for('static', filename='images/Snapchat-198344285.jpg') }}" alt="Profile photo" style="height: 400px; object-fit: cover;">
             </div>
             <div class="about-text">
                 <h3>About Me</h3>
