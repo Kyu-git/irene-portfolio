@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Kha's Portfolio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Hi, I'm Kha</h1>
+        <p>Full Stack Developer & Professional Hairdresser</p>
+        <p class="hero-subtitle">Bachelor of Computer Security and Forensics at Meru University of Science and Technology</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('portfolio') }}" class="btn btn-primary">View My Work</a>
+            <a href="{{ url_for('contact') }}" class="btn btn-secondary">Get In Touch</a>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">What I Do</h2>
+        <p class="section-subtitle">Combining technology and creativity to deliver exceptional results</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Full Stack Development</h3>
+                <p>Building robust web applications using modern technologies like Python, JavaScript, React, and more. From frontend design to backend architecture.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Cybersecurity & Forensics</h3>
+                <p>Specialized in computer security and digital forensics, ensuring systems are protected and investigating security incidents with precision.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3>Professional Hairdressing</h3>
+                <p>Creating beautiful hairstyles and providing expert hair care services. Transforming looks with creativity and professional techniques.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview Section -->
+<section class="section" style="background: #f8f9fa;">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-image">
+                <div style="width: 100%; height: 400px; background: linear-gradient(45deg, #667eea, #764ba2); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                    <i class="fas fa-user" style="font-size: 4rem; opacity: 0.7;"></i>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>About Me</h3>
+                <p>I'm a passionate individual with a unique combination of technical expertise and creative flair. As a graduate in Computer Security and Forensics from Meru University of Science and Technology, I bring a strong foundation in cybersecurity to my development work.</p>
+                <p>My journey spans across two diverse yet complementary fields - technology and hairdressing. This unique combination allows me to approach problems with both analytical thinking and creative problem-solving.</p>
+                <div class="skills">
+                    <div class="skill-category">
+                        <h4>Technical Skills</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">Cybersecurity</span>
+                            <span class="skill-tag">Digital Forensics</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Creative Skills</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Hair Styling</span>
+                            <span class="skill-tag">Color Techniques</span>
+                            <span class="skill-tag">Creative Design</span>
+                            <span class="skill-tag">Client Consultation</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="{{ url_for('about') }}" class="btn btn-primary" style="margin-top: 20px;">Learn More About Me</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Preview Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Featured Work</h2>
+        <p class="section-subtitle">A glimpse into my coding and hairdressing projects</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Coding Projects</h3>
+                <p>Explore my latest web development projects, from full-stack applications to security-focused tools and utilities.</p>
+                <a href="{{ url_for('portfolio') }}?filter=coding" class="btn btn-secondary" style="margin-top: 15px;">View Coding Videos</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-scissors"></i>
+                </div>
+                <h3>Hairdressing Work</h3>
+                <p>Discover my hairdressing techniques, transformations, and creative styling work through detailed video tutorials.</p>
+                <a href="{{ url_for('portfolio') }}?filter=hairdressing" class="btn btn-secondary" style="margin-top: 15px;">View Hair Videos</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="section" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title">Ready to Work Together?</h2>
+        <p class="section-subtitle">Whether you need a website, security consultation, or a fresh new look, I'm here to help!</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary">Start a Project</a>
+            <a href="{{ url_for('portfolio') }}" class="btn btn-secondary">View My Work</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: my-profile-website
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --preload --workers=2 --threads=4 --timeout=120
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.5
+      - key: DATABASE_URL
+        value: postgresql://reen_db_user:IlcBGDLNbGHVaKPuVysbTsQhmwe6lb1J@dpg-d2v85n15pdvs73b53g00-a.oregon-postgres.render.com/reen_db
+      - key: CLOUDINARY_URL
+        sync: false
+

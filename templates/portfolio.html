@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio - Kha's Portfolio{% endblock %}
+
+{% block content %}
+<!-- Portfolio Hero Section -->
+<section class="hero" style="padding: 80px 0;">
+    <div class="hero-content">
+        <h1>My Portfolio</h1>
+        <p>Coding Projects & Hairdressing Work</p>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Featured Work</h2>
+        <p class="section-subtitle">Explore my coding projects and hairdressing techniques through video demonstrations</p>
+        
+        <!-- Filter Buttons -->
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All Work</button>
+            <button class="filter-btn" data-filter="coding">Coding Projects</button>
+            <button class="filter-btn" data-filter="hairdressing">Hairdressing</button>
+        </div>
+        
+        <!-- Video Grid -->
+        <div class="video-grid">
+            {% for video in videos %}
+            <div class="video-card {{ video.category or 'coding' }}">
+                <video controls>
+                    <source src="{{ video.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-info">
+                    <h4>Uploaded Video</h4>
+                    <p>Added on {{ video.created_at.strftime('%Y-%m-%d') }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            
+            <!-- Placeholder for uploaded videos -->
+            <div class="video-card coding" style="border: 2px dashed #667eea; background: #f8f9fa;">
+                <div style="height: 250px; display: flex; align-items: center; justify-content: center; color: #667eea;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-plus" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                        <p>Upload Your Coding Video</p>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h4>Add Your Coding Project</h4>
+                    <p>Share your latest coding project or tutorial with the community.</p>
+                </div>
+            </div>
+            
+            <div class="video-card hairdressing" style="border: 2px dashed #667eea; background: #f8f9fa;">
+                <div style="height: 250px; display: flex; align-items: center; justify-content: center; color: #667eea;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-plus" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                        <p>Upload Your Hair Video</p>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h4>Add Your Hairdressing Work</h4>
+                    <p>Showcase your latest hairstyling techniques and transformations.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <h3>Share Your Work</h3>
+            <p>Upload your coding projects or hairdressing videos to showcase your skills</p>
+            
+            <form class="upload-form" action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Choose Video File</label>
+                    <input type="file" id="file" name="file" accept="video/*" required>
+                </div>
+                <button type="submit">Upload Video</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Project Highlights Section -->
+<section class="section" style="background: #f8f9fa;">
+    <div class="container">
+        <h2 class="section-title">Project Highlights</h2>
+        <p class="section-subtitle">Some of my most notable projects and achievements</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Portfolio Website</h3>
+                <p>This very website! Built with Flask, featuring video uploads, responsive design, and modern UI/UX principles. Demonstrates full-stack development skills.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Security Assessment Tool</h3>
+                <p>Developed a comprehensive security assessment tool for network vulnerability analysis, incorporating digital forensics techniques learned during my studies.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3>Hair Tutorial Series</h3>
+                <p>Created an extensive video tutorial series covering various hairdressing techniques, from basic cuts to advanced coloring methods.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Showcase Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Technical Skills in Action</h2>
+        <p class="section-subtitle">See how I apply my technical knowledge in real projects</p>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); margin-bottom: 30px;">
+                <h3 style="color: #667eea; margin-bottom: 20px;">Full Stack Development</h3>
+                <p style="margin-bottom: 15px;">My projects demonstrate proficiency in:</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Frontend development with React and vanilla JavaScript</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Backend development with Python Flask and Django</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Database design and management</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i>API development and integration</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Security best practices implementation</li>
+                </ul>
+            </div>
+            
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                <h3 style="color: #667eea; margin-bottom: 20px;">Cybersecurity Expertise</h3>
+                <p style="margin-bottom: 15px;">My security background brings value to every project:</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Secure coding practices and vulnerability assessment</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Network security and penetration testing</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Digital forensics and incident response</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Risk assessment and security planning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title">Interested in My Work?</h2>
+        <p class="section-subtitle">Let's discuss how I can help with your next project</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary">Start a Project</a>
+            <a href="{{ url_for('about') }}" class="btn btn-secondary">Learn More About Me</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Kha's Portfolio{% endblock %}
+
+{% block content %}
+<!-- Contact Hero Section -->
+<section class="hero" style="padding: 80px 0;">
+    <div class="hero-content">
+        <h1>Get In Touch</h1>
+        <p>Let's work together on your next project</p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-subtitle">Whether you need a website, security consultation, or a fresh new look, I'm here to help!</p>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p>I'm always excited to work on new projects and collaborate with interesting people. Whether you're looking for web development services, cybersecurity consultation, or professional hairdressing, I'd love to hear from you!</p>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Phone</strong><br>
+                        <a href="tel:+254XXXXXXXXX">+254 XXX XXX XXX</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Location</strong><br>
+                        Kenya
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Availability</strong><br>
+                        Monday - Friday: 9:00 AM - 6:00 PM<br>
+                        Saturday: 10:00 AM - 4:00 PM
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <h4 style="margin-bottom: 20px; color: #333;">Follow Me</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send Me a Message</h3>
+                <form method="POST" action="{{ url_for('contact') }}">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service" style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 8px; font-size: 1rem;">
+                            <option value="">Select a service</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="cybersecurity">Cybersecurity Consultation</option>
+                            <option value="hairdressing">Hairdressing Services</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell me about your project or how I can help you..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Overview Section -->
+<section class="section" style="background: #f8f9fa;">
+    <div class="container">
+        <h2 class="section-title">What I Can Help You With</h2>
+        <p class="section-subtitle">Comprehensive services across technology and hairdressing</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Full-stack web applications, responsive websites, and custom solutions tailored to your business needs.</p>
+                <ul style="text-align: left; margin-top: 15px; color: #666;">
+                    <li>Frontend Development (React, JavaScript, HTML/CSS)</li>
+                    <li>Backend Development (Python, Flask, Django)</li>
+                    <li>Database Design & Management</li>
+                    <li>API Development & Integration</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Cybersecurity</h3>
+                <p>Security assessments, vulnerability analysis, and implementation of security best practices.</p>
+                <ul style="text-align: left; margin-top: 15px; color: #666;">
+                    <li>Security Audits & Assessments</li>
+                    <li>Penetration Testing</li>
+                    <li>Digital Forensics</li>
+                    <li>Security Training & Consultation</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3>Hairdressing Services</h3>
+                <p>Professional hairdressing services and personalized styling consultations.</p>
+                <ul style="text-align: left; margin-top: 15px; color: #666;">
+                    <li>Hair Cutting & Styling</li>
+                    <li>Hair Coloring & Highlights</li>
+                    <li>Bridal Hair Services</li>
+                    <li>Hair Care Consultation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Common questions about my services and availability</p>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+                <h4 style="color: #667eea; margin-bottom: 15px;">What technologies do you work with?</h4>
+                <p style="color: #666;">I specialize in Python (Flask, Django), JavaScript (React, Node.js), and have extensive experience in cybersecurity and digital forensics. I also provide professional hairdressing services.</p>
+            </div>
+            
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+                <h4 style="color: #667eea; margin-bottom: 15px;">How long does a typical project take?</h4>
+                <p style="color: #666;">Project timelines vary depending on complexity. Simple websites typically take 1-2 weeks, while complex applications may take 4-8 weeks. I'll provide a detailed timeline during our initial consultation.</p>
+            </div>
+            
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+                <h4 style="color: #667eea; margin-bottom: 15px;">Do you offer ongoing support?</h4>
+                <p style="color: #666;">Yes! I provide ongoing maintenance and support for all my projects. I also offer training sessions to help you manage your systems independently.</p>
+            </div>
+            
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+                <h4 style="color: #667eea; margin-bottom: 15px;">Can you help with both technical and hairdressing needs?</h4>
+                <p style="color: #666;">Absolutely! My unique background allows me to offer both technical services and hairdressing services. Whether you need a website for your salon or want to learn coding techniques, I can help!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title">Ready to Get Started?</h2>
+        <p class="section-subtitle">Let's discuss your project and bring your ideas to life</p>
+        <div class="cta-buttons">
+            <a href="#contact-form" class="btn btn-primary">Send a Message</a>
+            <a href="{{ url_for('portfolio') }}" class="btn btn-secondary">View My Work</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
